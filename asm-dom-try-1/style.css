@@ -1,0 +1,99 @@
+html {
+  font-family: 'Roboto', sans-serif;
+  background: #e2e1e0;
+}
+/* --- Style of the root -----------------------------------------------------*/
+#root {
+  margin:auto;
+  max-width:600px;
+  padding:20px;
+  margin: auto;
+  border-radius: 2px;
+}
+
+
+/* --- Style of the buttons --------------------------------------------------*/
+.button {
+  border-radius: 10px;
+  background: #adadff;
+  cursor:pointer;
+  display:inline-block;
+  padding:10px;
+  text-decoration:none;
+  user-select:none;
+  font-size:20px;
+  color:white;
+}
+
+.button:hover {
+  background: #4d4dff;
+}
+
+.activity_editor {
+  margin:auto;
+  max-width:1000px;
+}
+
+.activities {
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.activity {
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.19), 0 3px 3px rgba(0,0,0,0.23);
+  margin:10px;
+  padding:0px;
+  min-width: 20%;
+  max-width: 500px;
+  flex-grow:1;
+  overflow: hidden;
+}
+
+.activity_content {
+  padding:10px;
+  overflow: wrap;
+  overflow-wrap: break-word;
+}
+
+.activity_image {
+  display:block;
+  width:100%;
+  max-height:300px;
+  object-fit: cover;
+}
+
+.menu {
+  display:flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+}
+
+#content {
+  padding:10px;
+}
+
+input, textarea {
+  padding:10px;
+  background-color:rgba(255,255,255,0.5);
+  border:5px solid rgba(0,0,0,0.1);
+  border-radius:10px;
+  min-width:300px;
+}
+
+.horizontal_flex_box {
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+pre {
+  overflow-x: auto;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+}
