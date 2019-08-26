@@ -1,0 +1,142 @@
+<html>
+<body>
+
+<style>
+  .event {
+    font-weight: bold;
+  }
+
+  .event-triggered {
+    size: 5px;
+    padding:0;
+    margin:0;
+    transition: color 1.5s, background-color 1.5s;
+    color:red;
+    background-color:rgba(1.0,0.0,0.0,0.3);
+  }
+
+  .flex {
+    display:flex
+  }
+
+  .flex > div {
+    margin:10px;
+    flex:1;
+  }
+
+  html {
+    background-color:gray;
+    font: "helvetica"
+  }
+
+  body {
+    background-color:white;
+    margin: auto;
+    padding: 30px;
+    max-width: 800px;
+  }
+
+  .not-colored {
+    color:black;
+    background-color:transparent;
+  }
+
+</style>
+
+<script>
+  async function main() {
+
+    // Wait for 'document' to be available.
+    await new Promise(resolve => window.addEventListener("load", resolve));
+    
+    let counter = document.querySelector("#counter");
+    let counter_value = 0;
+    let updateCounter = function() {
+      counter.innerHTML = "counter: " + (counter_value++);
+      setTimeout(updateCounter, 100);
+    }
+    updateCounter();
+
+    
+    let printEvent = function(text) {
+      let div = document.createElement("div");
+      let paragraph = document.createElement("p");
+      let text_node = document.createTextNode(text);
+      paragraph.className = "event";
+      div.appendChild(paragraph);
+      paragraph.appendChild(text_node);
+      document.querySelector("#event_list").appendChild(div)
+      return div;
+    }
+
+    let id = 0;
+
+    let listener = function(obj, event) {
+      let element = printEvent(event);
+      obj.addEventListener(event, function() {
+        let paragraph = document.createElement("p");
+        paragraph.className = "event-triggered";
+        let text_node = document.createTextNode(" * Fired at position " + (id++));
+        paragraph.appendChild(text_node);
+        element.appendChild(paragraph);
+        setTimeout(() => paragraph.classList.add("not-colored"), 100);
+      });
+    }
+    
+    let event_list_document = [
+      "visibilitychange",
+      "freeze",
+      "resume",
+    ];
+    
+    let event_list_window = [
+      "pageshow",
+      "pagehide"
+    ];
+    
+    for(event of event_list_document)
+      listener(document, event)
+    for(event of event_list_window)
+      listener(window, event)
+  }
+  main();
+</script>
+
+<h1>
+  bfcache tester.
+</h1>
+
+<p> To test whether the BackForwardCache is enabled or not, please navigate and
+  then go back: </p>
+
+<button onclick = "location.href = 'https://example.com'">Navigate to example.com</button>
+
+<h2>
+  slow loading images
+</h2>
+<div class="flex">
+<div>
+  <p> 100ms </p> <img src="http://deelay.me/100/http://via.placeholder.com/100">
+</div>
+<div>
+  <p> 500ms </p> <img src="http://deelay.me/500/http://via.placeholder.com/100">
+</div>
+<div>
+  <p> 1500ms </p> <img src="http://deelay.me/1500/http://via.placeholder.com/100">
+</div>
+<div>
+  <p> 3000ms </p> <img src="http://deelay.me/3000/http://via.placeholder.com/100">
+</div>
+</div>
+
+<h2>Counter</h2>
+<div id="counter">
+  counter: 0
+</div>
+
+<h2>Events:</h2>
+<div id="event_list">
+</div>
+
+</body>
+</html>
