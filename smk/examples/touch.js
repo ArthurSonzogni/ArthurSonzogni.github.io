@@ -200,7 +200,7 @@ Module['FS_createPath']('/examples', 'assets', true, true);
   }
 
  }
- loadPackage({"files": [{"start": 0, "audio": 0, "end": 325, "filename": "/examples/assets/CMakeLists.txt"}, {"start": 325, "audio": 0, "end": 4702, "filename": "/examples/assets/InTheCube_hero.png"}, {"start": 4702, "audio": 0, "end": 301414, "filename": "/examples/assets/arial.ttf"}, {"start": 301414, "audio": 0, "end": 301644, "filename": "/examples/assets/asset.hpp.in"}, {"start": 301644, "audio": 1, "end": 734130, "filename": "/examples/assets/water.mp3"}], "remote_package_size": 734130, "package_uuid": "4a9315ff-5f58-4e8d-9112-f41bb38aff20"});
+ loadPackage({"files": [{"start": 0, "audio": 0, "end": 325, "filename": "/examples/assets/CMakeLists.txt"}, {"start": 325, "audio": 0, "end": 4702, "filename": "/examples/assets/InTheCube_hero.png"}, {"start": 4702, "audio": 0, "end": 301414, "filename": "/examples/assets/arial.ttf"}, {"start": 301414, "audio": 0, "end": 301644, "filename": "/examples/assets/asset.hpp.in"}, {"start": 301644, "audio": 1, "end": 734130, "filename": "/examples/assets/water.mp3"}], "remote_package_size": 734130, "package_uuid": "9968cc40-e31c-4097-a2a3-2ae79b6e42f2"});
 
 })();
 
@@ -1433,11 +1433,11 @@ function updateGlobalBufferAndViews(buf) {
 }
 
 var STATIC_BASE = 1024,
-    STACK_BASE = 5280880,
+    STACK_BASE = 5280816,
     STACKTOP = STACK_BASE,
-    STACK_MAX = 38000,
-    DYNAMIC_BASE = 5280880,
-    DYNAMICTOP_PTR = 37824;
+    STACK_MAX = 37936,
+    DYNAMIC_BASE = 5280816,
+    DYNAMICTOP_PTR = 37760;
 
 assert(STACK_BASE % 16 === 0, 'stack must start aligned');
 assert(DYNAMIC_BASE % 16 === 0, 'heap must start aligned');
@@ -1952,7 +1952,7 @@ var ASM_CONSTS = {
 
 
 
-// STATICTOP = STATIC_BASE + 36976;
+// STATICTOP = STATIC_BASE + 36912;
 /* global initializers */  __ATINIT__.push({ func: function() { ___wasm_call_ctors() } });
 
 
@@ -4699,7 +4699,7 @@ var ASM_CONSTS = {
     }
 
   function _emscripten_get_sbrk_ptr() {
-      return 37824;
+      return 37760;
     }
 
   function _emscripten_memcpy_big(dest, src, num) {

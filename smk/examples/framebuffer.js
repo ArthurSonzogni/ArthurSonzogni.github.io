@@ -200,7 +200,7 @@ Module['FS_createPath']('/examples', 'assets', true, true);
   }
 
  }
- loadPackage({"files": [{"start": 0, "audio": 0, "end": 325, "filename": "/examples/assets/CMakeLists.txt"}, {"start": 325, "audio": 0, "end": 4702, "filename": "/examples/assets/InTheCube_hero.png"}, {"start": 4702, "audio": 0, "end": 301414, "filename": "/examples/assets/arial.ttf"}, {"start": 301414, "audio": 0, "end": 301644, "filename": "/examples/assets/asset.hpp.in"}, {"start": 301644, "audio": 1, "end": 734130, "filename": "/examples/assets/water.mp3"}], "remote_package_size": 734130, "package_uuid": "a0359808-fe18-4510-937f-245c42494ec0"});
+ loadPackage({"files": [{"start": 0, "audio": 0, "end": 325, "filename": "/examples/assets/CMakeLists.txt"}, {"start": 325, "audio": 0, "end": 4702, "filename": "/examples/assets/InTheCube_hero.png"}, {"start": 4702, "audio": 0, "end": 301414, "filename": "/examples/assets/arial.ttf"}, {"start": 301414, "audio": 0, "end": 301644, "filename": "/examples/assets/asset.hpp.in"}, {"start": 301644, "audio": 1, "end": 734130, "filename": "/examples/assets/water.mp3"}], "remote_package_size": 734130, "package_uuid": "deb11aaf-c902-4bc3-92e4-7aa7ffcbe7c7"});
 
 })();
 
